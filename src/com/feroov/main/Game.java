@@ -8,7 +8,6 @@ import java.io.InputStream;
 
 public class Game extends JFrame implements Runnable
 {
-
     private GameScreen gameScreen;
     private BufferedImage img;
     private Thread gameThread;
@@ -43,10 +42,7 @@ public class Game extends JFrame implements Runnable
         gameThread.start();
     }
 
-    private void updateGame()
-    {
-
-    }
+    private void updateGame() {}
 
     public static void main(String[] args)
     {

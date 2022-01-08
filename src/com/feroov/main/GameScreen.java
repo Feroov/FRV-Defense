@@ -10,7 +10,6 @@ public class GameScreen extends JPanel
 {
     private Random random;
     private BufferedImage img;
-
     private Dimension size;
 
     private ArrayList<BufferedImage> sprites = new ArrayList<>();
@@ -63,14 +62,5 @@ public class GameScreen extends JPanel
     private int getRndInt()
     {
         return random.nextInt(100);
-    }
-
-    private Color getRndColor()
-    {
-        int r = random.nextInt(256);
-        int g = random.nextInt(256);
-        int b = random.nextInt(256);
-
-        return new Color(r, g, b);
     }
 }
