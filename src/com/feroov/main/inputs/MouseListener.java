@@ -6,8 +6,16 @@ import java.awt.event.MouseMotionListener;
 public class MouseListener implements java.awt.event.MouseListener, MouseMotionListener
 {
     @Override
-    public void mouseClicked(MouseEvent e) {
-
+    public void mouseClicked(MouseEvent e)
+    {
+        if(e.getButton() == MouseEvent.BUTTON1)
+        {
+            System.out.println("Left button clicked");
+        }
+        else if(e.getButton() == MouseEvent.BUTTON3)
+        {
+            System.out.println("Right mouse works");
+        }
     }
 
     @Override

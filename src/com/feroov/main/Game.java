@@ -1,39 +1,62 @@
 package com.feroov.main;
 
-import javax.imageio.ImageIO;
+import com.feroov.main.inputs.KeyboardListener;
+import com.feroov.main.inputs.MouseListener;
+import com.feroov.scenes.Menu;
+import com.feroov.scenes.Playing;
+import com.feroov.scenes.Settings;
+
 import javax.swing.*;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.io.InputStream;
 
 public class Game extends JFrame implements Runnable
 {
     private GameScreen gameScreen;
-    private BufferedImage img;
     private Thread gameThread;
 
     private final double FPS_SET = 120.0;
     private final double UPS_SET = 60.0;
 
+    private MouseListener mouseListener;
+    private KeyboardListener keyboardListener;
+
+    // Classes
+    private Render render;
+    private Menu menu;
+    private Playing playing;
+    private Settings settings;
+
     public Game()
     {
-        importImg();
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        gameScreen = new GameScreen(img);
+        initClasses();
+
         add(gameScreen);
         pack();
 
         setVisible(true);
     }
 
-    private void importImg()
+    private void initClasses()
     {
-        InputStream is = getClass().getResourceAsStream("/spriteatlas.png");
+        render = new Render(this);
+        gameScreen = new GameScreen(this);
+        menu = new Menu(this);
+        playing = new Playing(this);
+        settings = new Settings(this);
+    }
 
-        try { img = ImageIO.read(is); }
-        catch(IOException e) { e.printStackTrace(); }
+    private void initInputs()
+    {
+        mouseListener = new MouseListener();
+        keyboardListener = new KeyboardListener();
+
+        addMouseListener(mouseListener);
+        addMouseMotionListener(mouseListener);
+        addKeyListener(keyboardListener);
+
+        requestFocus();
     }
 
     private void start()
@@ -49,6 +72,7 @@ public class Game extends JFrame implements Runnable
         System.out.println("\n\n&&&&&&&&&&& System logging stuff... &&&&&&&&&&&");
         System.out.println("\n\nStarting the game...");
         Game game = new Game();
+        game.initInputs();
         game.start();
     }
 
@@ -94,4 +118,11 @@ public class Game extends JFrame implements Runnable
             }
         }
     }
+
+    /*** Getters & Setters ***/
+    public Render getRender() {return render;}
+
+    public Menu getMenu() {return menu;}
+    public Playing getPlaying() {return playing;}
+    public Settings getSettings() {return settings;}
 }
