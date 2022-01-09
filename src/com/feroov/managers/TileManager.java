@@ -2,7 +2,6 @@ package com.feroov.managers;
 
 import com.feroov.helpmethods.LoadSave;
 import com.feroov.objects.Tile;
-
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
@@ -41,46 +40,47 @@ public class TileManager
         // Water
         tiles.add(WATER = new Tile(getSprite(4,1), id++, "Water")); /* 4 */
         tiles.add(DEEPWATER = new Tile(getSprite(3,1), id++, "Deep Water")); /* 5 */
-        tiles.add(WATER_NW = new Tile(getSprite(0,0), id++, "Water NW")); /* 6 */
-        tiles.add(WATER_SE = new Tile(getSprite(1,0), id++, "Water SE")); /* 7 */
-        tiles.add(WATER_TOP = new Tile(getSprite(2,0), id++, "Water TOP")); /* 8 */
-        tiles.add(WATER_DOWN = new Tile(getSprite(3,0), id++, "Water DOWN")); /* 9 */
-        tiles.add(WATER_NE = new Tile(getSprite(4,0), id++, "Water NE")); /* 10 */
-        tiles.add(WATER_RIGHT = new Tile(getSprite(0,1), id++, "Water RIGHT")); /* 11 */
-        tiles.add(WATER_SW = new Tile(getSprite(1,1), id++, "Water SW")); /* 12 */
-        tiles.add(WATER_LEFT = new Tile(getSprite(2,1), id++, "Water LEFT")); /* 13 */
+       /* tiles.add(WATER_NW = new Tile(getSprite(0,0), id++, "Water NW"));
+        tiles.add(WATER_SE = new Tile(getSprite(1,0), id++, "Water SE"));
+        tiles.add(WATER_TOP = new Tile(getSprite(2,0), id++, "Water TOP"));
+        tiles.add(WATER_DOWN = new Tile(getSprite(3,0), id++, "Water DOWN"));
+        tiles.add(WATER_NE = new Tile(getSprite(4,0), id++, "Water NE"));
+        tiles.add(WATER_RIGHT = new Tile(getSprite(0,1), id++, "Water RIGHT"));
+        tiles.add(WATER_SW = new Tile(getSprite(1,1), id++, "Water SW"));
+        tiles.add(WATER_LEFT = new Tile(getSprite(2,1), id++, "Water LEFT"));
 
         // Roads
-        tiles.add(ROAD_X = new Tile(getSprite(7,1), id++, "Road Horizontal")); /* 14 */
-        tiles.add(ROAD_Y = new Tile(getSprite(7,0), id++, "Road Vertical")); /* 15 */
-        tiles.add(ROAD_UPRIGHT = new Tile(getSprite(8,0), id++, "Road UPRIGHT")); /* 16 */
-        tiles.add(ROAD_LEFTDOWN = new Tile(getSprite(9,0), id++, "Road LEFTDOWN")); /* 17 */
-        tiles.add(ROAD_LEFTUP = new Tile(getSprite(8,1), id++, "Road LEFTUP")); /* 18 */
-        tiles.add(ROAD_DOWNRIGHT = new Tile(getSprite(9,1), id++, "Road DOWNRIGHT")); /* 19 */
+        tiles.add(ROAD_X = new Tile(getSprite(7,1), id++, "Road Horizontal"));
+        tiles.add(ROAD_Y = new Tile(getSprite(7,0), id++, "Road Vertical"));
+        tiles.add(ROAD_UPRIGHT = new Tile(getSprite(8,0), id++, "Road UPRIGHT"));
+        tiles.add(ROAD_LEFTDOWN = new Tile(getSprite(9,0), id++, "Road LEFTDOWN"));
+        tiles.add(ROAD_LEFTUP = new Tile(getSprite(8,1), id++, "Road LEFTUP"));
+        tiles.add(ROAD_DOWNRIGHT = new Tile(getSprite(9,1), id++, "Road DOWNRIGHT"));
 
         // Sand
-        tiles.add(SAND = new Tile(getSprite(0,4), id++, "Grass")); /* 20 */
-        tiles.add(SAND_CACTUS = new Tile(getSprite(1,4), id++, "Grass")); /* 21 */
-        tiles.add(SAND_SE = new Tile(getSprite(0,2), id++, "Grass")); /* 22 */
-        tiles.add(SAND_SW = new Tile(getSprite(1,2), id++, "Grass")); /* 23 */
-        tiles.add(SAND_NW = new Tile(getSprite(2,2), id++, "Grass")); /* 24 */
-        tiles.add(SAND_NE = new Tile(getSprite(3,2), id++, "Grass")); /* 25 */
-        tiles.add(SAND_LEFT = new Tile(getSprite(0,3), id++, "Grass")); /* 26 */
-        tiles.add(SAND_DOWN = new Tile(getSprite(1,3), id++, "Grass")); /* 27 */
-        tiles.add(SAND_RIGHT = new Tile(getSprite(2,3), id++, "Grass")); /* 28 */
-        tiles.add(SAND_UP = new Tile(getSprite(3,3), id++, "Grass")); /* 29 */
+        tiles.add(SAND = new Tile(getSprite(0,4), id++, "Grass"));
+        tiles.add(SAND_CACTUS = new Tile(getSprite(1,4), id++, "Grass"));
+        tiles.add(SAND_SE = new Tile(getSprite(0,2), id++, "Grass"));
+        tiles.add(SAND_SW = new Tile(getSprite(1,2), id++, "Grass"));
+        tiles.add(SAND_NW = new Tile(getSprite(2,2), id++, "Grass"));
+        tiles.add(SAND_NE = new Tile(getSprite(3,2), id++, "Grass"));
+        tiles.add(SAND_LEFT = new Tile(getSprite(0,3), id++, "Grass"));
+        tiles.add(SAND_DOWN = new Tile(getSprite(1,3), id++, "Grass"));
+        tiles.add(SAND_RIGHT = new Tile(getSprite(2,3), id++, "Grass"));
+        tiles.add(SAND_UP = new Tile(getSprite(3,3), id++, "Grass"));
 
         // Corner stuff
-        tiles.add(CORNER_BOTTOMRIGHT = new Tile(getSprite(5,0), id++, "Corner BOTTOMRIGHT")); /* 30 */
-        tiles.add(CORNER_BOTTOMLEFT = new Tile(getSprite(6,0), id++, "Corner BOTTOMLEFT")); /* 31 */
-        tiles.add(CORNER_TOPRIGHT = new Tile(getSprite(5,1), id++, "Corner TOPRIGHT")); /* 32 */
-        tiles.add(CORNER_TOPLEFT = new Tile(getSprite(6,1), id++, "Corner TOPLEFT")); /* 33 */
+        tiles.add(CORNER_BOTTOMRIGHT = new Tile(getSprite(5,0), id++, "Corner BOTTOMRIGHT"));
+        tiles.add(CORNER_BOTTOMLEFT = new Tile(getSprite(6,0), id++, "Corner BOTTOMLEFT"));
+        tiles.add(CORNER_TOPRIGHT = new Tile(getSprite(5,1), id++, "Corner TOPRIGHT"));
+        tiles.add(CORNER_TOPLEFT = new Tile(getSprite(6,1), id++, "Corner TOPLEFT"));
+
+        */
     }
 
-    private void loadAtlas()
-    {
-        atlas = LoadSave.getSpriteAtlas();
-    }
+    private void loadAtlas() { atlas = LoadSave.getSpriteAtlas();}
+
+    public Tile getTile(int id) { return tiles.get(id);}
 
     public BufferedImage getSprite(int id)
     {

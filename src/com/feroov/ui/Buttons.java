@@ -45,7 +45,6 @@ public class Buttons
         drawBorder(g);
         // Text
         drawText(g);
-
     }
 
     private void drawBorder(Graphics g)
@@ -64,7 +63,7 @@ public class Buttons
     private void drawBody(Graphics g)
     {
         if(mouseOver)
-            g.setColor(Color.GRAY);
+            g.setColor(Color.RED);
         else
             g.setColor(Color.WHITE);
         g.fillRect(x, y, width, height);
@@ -77,11 +76,7 @@ public class Buttons
         g.drawString(text, x - w / 2 + width / 2 , y + h / 3 + height / 2);
     }
 
-    public void resetBooleans()
-    {
-        this.mouseOver = false;
-        this.mousePressed = false;
-    }
+    public void resetBooleans() { this.mouseOver = false; this.mousePressed = false; }
 
     public void setMousePressed(boolean mousePressed)
     {
@@ -93,13 +88,11 @@ public class Buttons
         this.mouseOver = mouseOver;
     }
 
-    public Rectangle getBounds()
-    {
-        return bounds;
-    }
+    public boolean isMouseOver() { return mouseOver; }
 
-    public int getId()
-    {
-        return id;
-    }
+    public boolean isMousePressed() { return mousePressed; }
+
+    public Rectangle getBounds() { return bounds; }
+
+    public int getId() { return id; }
 }

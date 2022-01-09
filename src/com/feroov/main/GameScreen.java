@@ -1,10 +1,12 @@
 package com.feroov.main;
 
+
 import com.feroov.main.inputs.KeyboardListener;
 import com.feroov.main.inputs.MouseListener;
 
 import javax.swing.*;
 import java.awt.*;
+
 
 public class GameScreen extends JPanel
 {

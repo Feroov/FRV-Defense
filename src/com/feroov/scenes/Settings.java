@@ -2,8 +2,9 @@ package com.feroov.scenes;
 
 import com.feroov.main.Game;
 import com.feroov.ui.Buttons;
-import static com.feroov.main.GameStates.*;
 import java.awt.*;
+import static com.feroov.main.GameStates.*;
+
 
 public class Settings extends GameScene implements SceneMethods
 {
@@ -63,8 +64,8 @@ public class Settings extends GameScene implements SceneMethods
         resetButtons();
     }
 
-    private void resetButtons()
-    {
-        bMenu.resetBooleans();
-    }
+    @Override
+    public void mouseDragged(int x, int y) {}
+
+    private void resetButtons() { bMenu.resetBooleans(); }
 }

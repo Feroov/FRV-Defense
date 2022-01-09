@@ -1,8 +1,8 @@
 package com.feroov.scenes;
 
+import com.feroov.helpmethods.LoadSave;
 import com.feroov.main.Game;
 import com.feroov.ui.Buttons;
-
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -18,6 +18,8 @@ public class Menu extends GameScene implements SceneMethods
 
     private Buttons bPlaying, bSettings, bQuit;
 
+    public BufferedImage mainMenu;
+
     public Menu(Game game)
     {
         super(game);
@@ -31,7 +33,7 @@ public class Menu extends GameScene implements SceneMethods
         int w = 150;
         int h = w / 3;
         int x = 640 / 2 - w / 2;
-        int y = 150;
+        int y = 330;
         int yOffset = 100;
 
         bPlaying = new Buttons("Play", x, y, w, h);
@@ -42,6 +44,7 @@ public class Menu extends GameScene implements SceneMethods
     @Override
     public void render(Graphics g)
     {
+        g.drawImage(LoadSave.importImg(),0,0,null);
         drawButtons(g);
     }
 
@@ -103,6 +106,9 @@ public class Menu extends GameScene implements SceneMethods
     {
         resetButtons();
     }
+
+    @Override
+    public void mouseDragged(int x, int y) {}
 
     private void resetButtons()
     {

@@ -12,9 +12,15 @@ public class LoadSave
         BufferedImage img = null;
         InputStream is = LoadSave.class.getClassLoader().getResourceAsStream("spriteatlas.png");
 
-        try { img = ImageIO.read(is); }
-        catch(IOException e) { e.printStackTrace(); }
+        try { img = ImageIO.read(is); } catch(IOException e) { e.printStackTrace(); }
+        return img;
+    }
 
+    public static BufferedImage  importImg() {
+        BufferedImage img = null;
+        InputStream is = LoadSave.class.getClassLoader().getResourceAsStream("mainmenu.png");
+
+        try { img = ImageIO.read(is); } catch (IOException e) { e.printStackTrace();}
         return img;
     }
 }
