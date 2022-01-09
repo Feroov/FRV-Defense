@@ -37,6 +37,7 @@ public class Game extends JFrame implements Runnable
         setVisible(true);
     }
 
+
     private void initClasses()
     {
         render = new Render(this);
