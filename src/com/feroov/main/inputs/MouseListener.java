@@ -1,31 +1,77 @@
 package com.feroov.main.inputs;
 
+import com.feroov.main.Game;
+import com.feroov.main.GameStates;
+
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 
 public class MouseListener implements java.awt.event.MouseListener, MouseMotionListener
 {
+    private Game game;
+    public MouseListener(Game game)
+    {
+        this.game = game;
+    }
+
     @Override
     public void mouseClicked(MouseEvent e)
     {
         if(e.getButton() == MouseEvent.BUTTON1)
         {
-            System.out.println("Left button clicked");
+            switch (GameStates.gameStates)
+            {
+                case MENU:
+                    game.getMenu().mouseClicked(e.getX(), e.getY());
+                    break;
+                case PLAYING:
+                    game.getPlaying().mouseClicked(e.getX(), e.getY());
+                    break;
+                case SETTINGS:
+                    game.getSettings().mouseClicked(e.getX(), e.getY());
+                    break;
+                default:
+                    break;
+            }
         }
-        else if(e.getButton() == MouseEvent.BUTTON3)
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e)
+    {
+        switch (GameStates.gameStates)
         {
-            System.out.println("Right mouse works");
+            case MENU:
+                game.getMenu().mousePressed(e.getX(), e.getY());
+                break;
+            case PLAYING:
+                game.getPlaying().mousePressed(e.getX(), e.getY());
+                break;
+            case SETTINGS:
+                game.getSettings().mousePressed(e.getX(), e.getY());
+                break;
+            default:
+                break;
         }
     }
 
     @Override
-    public void mousePressed(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-
+    public void mouseReleased(MouseEvent e)
+    {
+        switch (GameStates.gameStates)
+        {
+            case MENU:
+                game.getMenu().mouseReleased(e.getX(), e.getY());
+                break;
+            case PLAYING:
+                game.getPlaying().mouseReleased(e.getX(), e.getY());
+                break;
+            case SETTINGS:
+                game.getSettings().mouseReleased(e.getX(), e.getY());
+                break;
+            default:
+                break;
+        }
     }
 
     @Override
@@ -44,7 +90,21 @@ public class MouseListener implements java.awt.event.MouseListener, MouseMotionL
     }
 
     @Override
-    public void mouseMoved(MouseEvent e) {
-
+    public void mouseMoved(MouseEvent e)
+    {
+        switch (GameStates.gameStates)
+        {
+            case MENU:
+                game.getMenu().mouseMoved(e.getX(), e.getY());
+                break;
+            case PLAYING:
+                game.getPlaying().mouseMoved(e.getX(), e.getY());
+                break;
+            case SETTINGS:
+                game.getSettings().mouseMoved(e.getX(), e.getY());
+                break;
+            default:
+                break;
+        }
     }
 }

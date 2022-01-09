@@ -1,7 +1,5 @@
 package com.feroov.main;
 
-import com.feroov.main.inputs.KeyboardListener;
-import com.feroov.main.inputs.MouseListener;
 import com.feroov.scenes.Menu;
 import com.feroov.scenes.Playing;
 import com.feroov.scenes.Settings;
@@ -16,8 +14,7 @@ public class Game extends JFrame implements Runnable
     private final double FPS_SET = 120.0;
     private final double UPS_SET = 60.0;
 
-    private MouseListener mouseListener;
-    private KeyboardListener keyboardListener;
+    ImageIcon icon;
 
     // Classes
     private Render render;
@@ -35,6 +32,8 @@ public class Game extends JFrame implements Runnable
         add(gameScreen);
         pack();
 
+        icon = new ImageIcon("res/frvlogo.png");
+        setIconImage(icon.getImage());
         setVisible(true);
     }
 
@@ -45,18 +44,6 @@ public class Game extends JFrame implements Runnable
         menu = new Menu(this);
         playing = new Playing(this);
         settings = new Settings(this);
-    }
-
-    private void initInputs()
-    {
-        mouseListener = new MouseListener();
-        keyboardListener = new KeyboardListener();
-
-        addMouseListener(mouseListener);
-        addMouseMotionListener(mouseListener);
-        addKeyListener(keyboardListener);
-
-        requestFocus();
     }
 
     private void start()
@@ -72,7 +59,7 @@ public class Game extends JFrame implements Runnable
         System.out.println("\n\n&&&&&&&&&&& System logging stuff... &&&&&&&&&&&");
         System.out.println("\n\nStarting the game...");
         Game game = new Game();
-        game.initInputs();
+        game.gameScreen.initInputs();
         game.start();
     }
 
