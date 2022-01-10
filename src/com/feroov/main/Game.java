@@ -4,7 +4,9 @@ import com.feroov.scenes.Menu;
 import com.feroov.scenes.Playing;
 import com.feroov.scenes.Settings;
 
+import javax.sound.sampled.*;
 import javax.swing.*;
+import java.io.IOException;
 
 public class Game extends JFrame implements Runnable
 {
@@ -27,6 +29,7 @@ public class Game extends JFrame implements Runnable
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setResizable(false);
+        setTitle("FRV Defense");
         initClasses();
 
         add(gameScreen);
