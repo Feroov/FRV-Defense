@@ -29,7 +29,6 @@ public class Game extends JFrame implements Runnable
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setResizable(false);
-        setTitle("FRV Defense");
         initClasses();
 
         add(gameScreen);
